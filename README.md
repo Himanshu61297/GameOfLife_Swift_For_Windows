@@ -1,3 +1,3 @@
-# gameOfLife
+# Game Of Life
 
-A description of this package.
+Swift console app build using Swift for windows.
