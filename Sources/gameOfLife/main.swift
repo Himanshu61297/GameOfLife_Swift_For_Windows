@@ -1,30 +1,5 @@
 import Foundation
+import Swift
 
-var game = Game()
-var helper = Helpers()
-var gen = 0
-
-var board = game.GenerateWorld(size: 5)
-board = game.InitializeWorld(board)
-
-var ch = "0"
-
-print("")
-repeat {
-    print("Genration: \(gen)")    
-    helper.printGameBoard(board)    
-    board = game.NextPopulation(board)
-        
-    gen += 1
-    ch = readLine() ?? "0"
-} while ch == ""
-
-
-
-
-
-
-
-
-
-
+var playGame = Play(size: 25, delay: 0.1) // will create 25X25 2D array | 100ms delay between genrations
+playGame.start()

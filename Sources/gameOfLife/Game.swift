@@ -6,7 +6,7 @@ class Game: PGame {
     
     // Generate empty world
     func GenerateWorld(size: Int) -> [[String]]{
-        let board  = Array(repeating: Array(repeating: "0", count: size), count: size)
+        let board  = Array(repeating: Array(repeating: " ", count: size), count: size)
         return board
     }
 
@@ -17,7 +17,7 @@ class Game: PGame {
         for i in 0..<board.count {           
            for j in 0..<board.count {
               if helper.shouldBeAliveORDead() { //Returns True or false
-                  newBoard[i][j] = "1"
+                  newBoard[i][j] = "*"
               }
            }
        }       
@@ -39,12 +39,12 @@ class Game: PGame {
                 //1. Any live cell with fewer than two live neighbours dies, as if by loneliness.
                 //2. Any live cell with more than three live neighbours dies, as if by overcrowding.
                 if count < 2 || count > 3 {
-                    next[i][j] = "0";
+                    next[i][j] = " ";
                 }
 
                 //3. Any dead cell with exactly three live neighbours comes to life.
-                else if count == 3 && board[i][j] == "0" {
-                    next[i][j] = "1";
+                else if count == 3 && board[i][j] == " " {
+                    next[i][j] = "*";
                 }
 
                 //4. Any live cell with two or three live neighbours lives, unchanged, to the next generation.

@@ -17,12 +17,12 @@ class Helpers {
         var count = 0
 
         for check in checksList {
-            var i = check.0 + index.0
-            var j = check.1 + index.1
+            let i = check.0 + index.0
+            let j = check.1 + index.1
 
             if i >= 0 && j >= 0 && i < board.count && j < board[0].count //Checking for the out of bounds of the array
             {
-                if board[i][j] == "1"
+                if board[i][j] == "*"
                 {
                     count += 1
                 }
@@ -43,6 +43,6 @@ class Helpers {
                print("\(str)", terminator: " ")      
            }
            print("")
-       }
+       }       
     }
 }
